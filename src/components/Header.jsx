@@ -17,9 +17,9 @@ export default function Header() {
     </label>
     <nav aria-label="Header Navigation" class="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start">
       <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0 font-semibold" >
-        <li class="text-gray-600 md:mr-12 hover:text-blue-600"><a href="#">Home</a></li>
-        <li class="text-gray-600 md:mr-12 hover:text-blue-600"><a href="#aboutus">About Us</a></li>
-        <li class="text-gray-600 md:mr-12 hover:text-blue-600"><a href="#contact">Join Us</a></li>
+        <li class="text-gray-600 md:mr-12 hover:text-green-600"><a href="#">Home</a></li>
+        <li class="text-gray-600 md:mr-12 hover:text-green-600"><a href="#aboutus">About Us</a></li>
+        <li class="text-gray-600 md:mr-12 hover:text-green-600"><a href="#contact">Join Us</a></li>
         {/* <li class="text-gray-600 md:mr-12 hover:text-blue-600">
           <button class="rounded-md border-2 border-blue-600 px-6 py-1 font-medium text-blue-600 transition-colors hover:bg-blue-600 hover:text-white">Login</button>
         </li> */}

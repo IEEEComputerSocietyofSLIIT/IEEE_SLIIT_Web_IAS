@@ -26,7 +26,7 @@ export default function Contact() {
                     <div className="flex items-stretch justify-center">
                         <div className="grid md:grid-cols-2">
                             <div className="h-full pr-6">
-                                <p className="mt-3 mb-12 text-lg text-gray-300 ">
+                                <p className="mt-3 mb-6 text-lg text-gray-300 ">
                                     We're here to support you. Reach out with any questions about our events, membership, or initiatives.
                                 </p>
                                 <ul className="mb-6 md:mb-0">
@@ -65,7 +65,7 @@ export default function Contact() {
                                             </a>
                                         </div>
                                     </li>
-                                    <li className="flex items-center mb-8">
+                                    <li className="flex items-center mb-4">
                                         <div className="flex h-10 w-10 items-center justify-center rounded bg-primary text-gray-50">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
                                         </div>
@@ -74,7 +74,7 @@ export default function Contact() {
 
                                         </div>
                                     </li>
-                                    <li className="flex items-center mb-8">
+                                    <li className="flex items-center mb-4">
                                         <div className="flex h-10 w-10 items-center justify-center rounded bg-primary text-gray-50">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
                                         </div>
@@ -83,7 +83,7 @@ export default function Contact() {
 
                                         </div>
                                     </li>
-                                    <li className="flex items-center mb-8">
+                                    <li className="flex items-center mb-4">
                                         <div className="flex h-10 w-10 items-center justify-center rounded bg-primary text-gray-50">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
                                         </div>
@@ -93,7 +93,7 @@ export default function Contact() {
                                         </div>
                                     </li>
                                     <li>
-                                        <p><iframe className="rounded-xl" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126745.6272212363!2d79.829906!3d6.9143985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae256db1a6771c5%3A0x2c63e344ab9a7536!2sSri%20Lanka%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2slk!4v1721225834362!5m2!1sen!2slk" width="400" height="150" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                                        <p><iframe className="rounded-xl w-full md:w-2/3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126745.6272212363!2d79.829906!3d6.9143985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae256db1a6771c5%3A0x2c63e344ab9a7536!2sSri%20Lanka%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2slk!4v1721225834362!5m2!1sen!2slk" width="400" height="150" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
                                     </li>
                                 </ul>
                             </div>

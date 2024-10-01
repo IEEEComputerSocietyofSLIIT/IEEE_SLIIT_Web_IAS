@@ -14,13 +14,13 @@ export default function About() {
 
             <div class="container mx-auto px-4 mt-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="flex flex-col items-center justify-center space-y-6 p-10 bg-gray-200 rounded-xl">
+                    <div class="flex flex-col items-center justify-center space-y-6 p-10 bg-gray-300 rounded-xl">
                         <h3 class="text-3xl font-bold text-primary">Our Vision</h3>
                         <p class="text-gray-600 text-md text-center">Fostering a culture of innovation and excellence in the realm of Industry Applications, we aspire to be a driving force that empowers individuals to push the boundaries of technology, creating solutions that have a transformative, lasting and positive impact on industries and society as a whole.
                         </p>
                     </div>
 
-                    <div class="flex flex-col items-center justify-center space-y-6 p-10 bg-gray-200 rounded-xl">
+                    <div class="flex flex-col items-center justify-center space-y-6 p-10 bg-gray-300 rounded-xl">
                         <h3 class="text-3xl font-bold text-primary">Our Mission</h3>
                         <p class="text-gray-600 text-md text-center">We aim to cultivate a community that not only excels in academic and professional endeavors but also actively contributes to the positive transformation of industries through technological innovation, by facilitating knowledge sharing, industry collaboration, skill development, community engagement and ethical practices
                         </p>
