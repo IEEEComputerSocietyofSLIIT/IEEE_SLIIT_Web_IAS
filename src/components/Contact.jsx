@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/IAS.png";
 
 export default function Contact() {
     return (
@@ -125,7 +126,7 @@ export default function Contact() {
                     </div>
                     <div className="md:mt-16 text-center border-t border-gray-800 pt-10 md:pt-10">
                         <p className="text-gray-300">
-                            &copy; 2024 IEEE IAS SLIIT. All rights reserved.
+                            &copy; 2023 IEEE CS SLIIT. All rights reserved.
                         </p>
                     </div>
                 </div>

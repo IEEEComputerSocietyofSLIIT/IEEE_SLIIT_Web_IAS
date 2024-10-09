@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "../assets/hero.jpg"
+import hero from "../assets/WhatsApp Image 2024-10-10 at 00.42.26_69a5c1f4.jpg"
 
 export default function Hero() {
     return (
@@ -8,10 +8,10 @@ export default function Hero() {
         <div >
             <main class="">
                 <section class="relative bg-gradient-to-br from-teal-700 to-green-400 text-white overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-70">
+                    <div class="absolute inset-0 bg-black opacity-60">
 
-                        <img src={hero} class="w-full  absolute inset-0 bg-cover bg-center filter  opacity-50 brightness-50" />
-                        <div class="absolute inset-0 bg-black opacity-60"></div>
+                        <img src={hero} class="w-full  absolute inset-0 bg-cover bg-center filter  opacity-60 brightness-60" />
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
 
                     </div>
 

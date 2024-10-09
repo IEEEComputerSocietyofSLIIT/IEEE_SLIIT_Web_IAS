@@ -7,6 +7,7 @@ import Himash from '../assets/Himash Jayasinghe - Treasurer.jpg'
 import Ramudu from '../assets/Ramudu Welikala - Chairperson.jpg'
 import Hafsa from '../assets/Hafsa Zainab - Vice-Chair.jpg'
 import Ruwanya from '../assets/Ruwanya Athukorala - Secratary.jpg'
+import IASprof from '../assets/IASprof.jpg'
 
 export default function Team() {
     return (
@@ -17,7 +18,7 @@ export default function Team() {
                 <div class="mx-auto flex align-middle justify-center">
                     <article class="w-full md:w-[800px] md:items-center md:flex grid rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:scale-110 transform translate duration-300">
                         <div class="relative md:w-1/2 flex items-end overflow-hidden rounded-xl">
-                            <img src={Profile} alt="Hotel Photo" className="w-full " />
+                            <img src={IASprof} alt="Hotel Photo" className="w-full " />
 
                         </div>
 
