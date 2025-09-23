@@ -6,3 +6,7 @@
 *{
     scroll-behavior: smooth;
 }
+body{
+    cursor:default;
+    background-color: white !important;
+}
