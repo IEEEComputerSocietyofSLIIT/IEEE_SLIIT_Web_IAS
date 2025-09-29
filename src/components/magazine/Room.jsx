@@ -90,6 +90,7 @@ const RoomScene = ({ onScrollComplete }) => {
       scene.add(leg);
     });
 
+    // === FLOOR ===
     const floor = new THREE.Mesh(
       new THREE.PlaneGeometry(7, 4), // Width x Depth of the floor
       new THREE.MeshStandardMaterial({ color: "#000000", side: THREE.DoubleSide })
@@ -99,7 +100,8 @@ const RoomScene = ({ onScrollComplete }) => {
     floor.receiveShadow = true;
     scene.add(floor);
 
-    const magazineTexture = textureLoader.load("/cover/cover.jpg", (tex) => {
+    // === MAGAZINE ===
+    const magazineTexture = textureLoader.load("/src/components/resouses/cover.jpg", (tex) => {
       tex.minFilter = THREE.LinearFilter;
       tex.magFilter = THREE.LinearFilter;
       tex.generateMipmaps = false;
@@ -714,17 +716,19 @@ const RoomScene = ({ onScrollComplete }) => {
     centerMat.receiveShadow = true;
     scene.add(centerMat);
 
-
+    // === HANDLE WINDOW RESIZE ===
     const handleResize = () => {
       const { width, height } = mount.getBoundingClientRect();
       camera.aspect = width / height;
-      camera.updateProjectionMatrix(); 
+      camera.updateProjectionMatrix(); // Recalculate camera view
       renderer.setSize(width, height);
     };
     window.addEventListener("resize", handleResize);
 
+    // === RENDER LOOP ===
     const renderScene = () => renderer.render(scene, camera);
 
+    // Replace animate() with a one-time render + on scroll
     renderScene();
     ScrollTrigger.create({
       trigger: containerRef.current,
@@ -736,21 +740,22 @@ const RoomScene = ({ onScrollComplete }) => {
         camera.position.z = 5.5 - 4.9 * progress;
         camera.position.y = 2.4 + 0.4 * progress;
         camera.lookAt(0, 1, 0);
-        renderScene();
+        renderScene(); // only render when scroll updates
         if (progress > 0.98 && lastTriggerRef.current !== true) {
           lastTriggerRef.current = true;
-          onScrollComplete(true); 
+          onScrollComplete(true); // flipbook
           console.log("🎯 Flipbook triggered!");
 
         } else if (progress < 0.98 && lastTriggerRef.current !== false) {
           lastTriggerRef.current = false;
-          onScrollComplete(false); 
+          onScrollComplete(false); // return to table3D
         }
 
       },
     });
 
 
+    // === CLEANUP ON UNMOUNT ===
     return () => {
       window.removeEventListener("resize", handleResize);
       mount.removeChild(renderer.domElement);
@@ -759,6 +764,7 @@ const RoomScene = ({ onScrollComplete }) => {
     };
   }, [onScrollComplete]);
 
+  // === RENDER HTML SCROLL AREA + STICKY CANVAS ===
   return (
     <div ref={containerRef} style={{ height: "200vh" }}>
       <div

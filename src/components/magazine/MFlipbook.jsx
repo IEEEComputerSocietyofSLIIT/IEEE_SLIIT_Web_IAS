@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 
-const TOTAL_PAGES = 80;
+const TOTAL_PAGES = 39;
 
 const MFlipbook = () => {
   const bookRef = useRef(null);

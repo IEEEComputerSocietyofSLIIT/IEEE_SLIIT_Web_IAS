@@ -1,0 +1,220 @@
+/* ===== Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* ===== Base Wrapper ===== */
+.magazine-wrapper {
+  background-color: black;
+  color: white;
+  padding: 5rem 2rem;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Text Container ===== */
+.magazine-description {
+  font-family: 'Inter', sans-serif;
+  max-width: 95%;
+  margin: 0 auto;
+  z-index: 10;
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+/* ===== Responsive Typography ===== */
+@media (max-width: 1024px) {
+  .magazine-description {
+    font-size: 32px;
+    line-height: 42px;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .magazine-wrapper {
+    padding: 3rem 1.5rem;
+  }
+
+  .magazine-description {
+    font-size: 24px;
+    line-height: 36px;
+    padding: 0 1rem;
+  }
+
+  .magazine-sparkles span {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .magazine-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .magazine-description {
+    font-size: 30px;
+    line-height: 32px;
+    padding: 0 20px;
+    text-align: justify;
+    margin-right: 25px !important;
+  }
+
+  .magazine-sparkles span {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== Effects ===== */
+.gradient-text {
+  font-weight: bold;
+  background: linear-gradient(to right, #00c6ff, #8e2de2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.glow-effect {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: white !important;
+  text-shadow:
+    0 0 5px rgba(0, 198, 255, 0.6),
+    0 0 10px rgba(69, 45, 226, 0.5),
+    0 0 15px rgba(45, 93, 226, 0.4),
+    0 0 20px rgba(45, 196, 226, 0.3);
+}
+
+.blood {
+  animation: blood 1s ease-in infinite;
+}
+
+@keyframes blood {
+  0%, 2% {
+    color: #ff4d4f;
+    font-weight: 900;
+    text-shadow:
+      0 0 5px rgba(255, 77, 79, 0.8),
+      0 0 10px rgba(255, 77, 79, 0.6);
+  }
+}
+
+.glitch-blip {
+  animation: glitchFontBlip 5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes glitchFontBlip {
+  0% {
+    font-family: inherit;
+    color: #ffffff !important;
+    background: #000000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+  }
+  1%, 2%, 3%, 4% {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff0000, #8e2de2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  5%, 100% {
+    font-family: inherit;
+    color: #ffffff !important;
+    background: #000000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+  }
+}
+
+.emoji-bounce {
+  display: inline-block;
+  animation: bounce 5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.rotate-letters {
+  display: inline-block;
+}
+
+/* ===== Sparkles ===== */
+.magazine-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.magazine-sparkles span {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 8s infinite ease-in-out;
+  opacity: 0.2;
+}
+
+.magazine-sparkles span:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.magazine-sparkles span:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; }
+.magazine-sparkles span:nth-child(3) { top: 60%; left: 20%; animation-delay: 4s; }
+.magazine-sparkles span:nth-child(4) { top: 80%; left: 70%; animation-delay: 6s; }
+.magazine-sparkles span:nth-child(5) { top: 50%; left: 45%; animation-delay: 1s; }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* ===== Optional Word Swap (not currently used but ready) ===== */
+.swap-container {
+  display: inline-flex;
+  gap: 6px;
+  animation: swapWords 10s infinite;
+  position: relative;
+}
+
+.word {
+  display: inline-block;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+@keyframes swapWords {
+  0%, 10%, 100% {
+    flex-direction: row;
+  }
+  11%, 40% {
+    flex-direction: row-reverse;
+  }
+}
+
+.swap-container.flex-reverse .word {
+  opacity: 0.6;
+  transform: translateX(5px);
+}
