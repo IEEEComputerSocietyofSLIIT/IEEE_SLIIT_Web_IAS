@@ -64,11 +64,11 @@ const MagazineDescription = () => {
           </span>
           <span className="emoji-bounce"></span> under one vibrant platform.{" "}
           <span className="emoji-bounce"></span>
-          <br /> This isn't just a magazine—it’s a{" "}
+          <br /> This isn't just a magazine, it’s a{" "}
           <span className="blood">  pulse check     </span>{" "}
           <span className="emoji-bounce"></span> on our progress, our passion
           for innovation <span className="emoji-bounce">💡</span>, and our
-          vision for the <span className="glitch-blip">future</span>{" "}
+          vision for the future{" "}
           <span className="emoji-bounce">🚀</span>.
         </p>
       </div>
