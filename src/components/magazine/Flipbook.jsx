@@ -3,7 +3,7 @@ import HTMLFlipBook from 'react-pageflip';
 import flipSoundFile from './resouses/flip.mp3';
 import ArrowCursor from './extras/ArrowCurser';
 
-const TOTAL_PAGES = 39;
+const TOTAL_PAGES = 80;
 
 const Flipbook = () => {
     const bookRef = useRef(null);
