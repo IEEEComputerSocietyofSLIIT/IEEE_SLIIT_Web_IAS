@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
+import cover from "./resouses/cover.jpg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/Table3D.css";
 
@@ -101,7 +102,7 @@ const RoomScene = ({ onScrollComplete }) => {
     scene.add(floor);
 
     // === MAGAZINE ===
-    const magazineTexture = textureLoader.load("/src/components/resouses/cover.jpg", (tex) => {
+    const magazineTexture = textureLoader.load(cover, (tex) => {
       tex.minFilter = THREE.LinearFilter;
       tex.magFilter = THREE.LinearFilter;
       tex.generateMipmaps = false;
