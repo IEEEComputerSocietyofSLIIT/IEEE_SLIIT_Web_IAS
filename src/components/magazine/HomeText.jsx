@@ -25,7 +25,7 @@ const TechPulseMagazine = ({ onContinue }) => {
     >
       {/* Back Button */}
       <a
-        href="https://ias.ieeesliit.com/"
+        href="/"
         style={{
           position: "absolute",
           top: "20px",
