@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 
-const TOTAL_PAGES = 39;
+const TOTAL_PAGES = 80;
 
 const MFlipbook = () => {
   const bookRef = useRef(null);
@@ -55,7 +55,7 @@ const MFlipbook = () => {
           {Array.from({ length: TOTAL_PAGES }, (_, i) => (
             <div key={i} style={styles.page}>
               <img
-                src={`/pages/page${i + 1}.jpg`}
+                src={`/pages/page${i + 1}.webp`}
                 alt={`Page ${i + 1}`}
                 style={styles.image}
               />

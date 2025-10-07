@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/orbitron": "^5.2.8",
     "@studio-freight/lenis": "^1.0.42",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -44,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "critters": "^0.0.23",
     "tailwindcss": "^3.4.4"
   }
 }
