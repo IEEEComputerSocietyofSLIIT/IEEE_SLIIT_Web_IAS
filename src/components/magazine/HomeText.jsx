@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import cover from "./resouses/cover.jpg";
+import cover from "./resouses/cover.webp";
 import "./styles/text.css";
 import Hyperspeed from "./extras/Hyperspeed";
 import SplitText from "./extras/SplitText";

@@ -98,7 +98,7 @@ const Flipbook = () => {
                         {Array.from({ length: TOTAL_PAGES }, (_, i) => (
                             <div key={i} className="page" style={pageStyle}>
                                 <img
-                                    src={`/pages/page${i + 1}.jpg`}
+                                    src={`/pages/page${i + 1}.webp`}
                                     alt={`Page ${i + 1}`}
                                     style={{ width: '100%', height: '100%', objectFit: 'cover',marginTop:"20px" }}
                                 />
