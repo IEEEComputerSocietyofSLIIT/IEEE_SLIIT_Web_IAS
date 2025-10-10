@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import cover from "./resouses/cover.webp";
 import "./styles/text.css";
 import Hyperspeed from "./extras/Hyperspeed";
@@ -6,8 +6,73 @@ import SplitText from "./extras/SplitText";
 import StarParticles from "./extras/starparticles";
 import TiltedCard from "./extras/TiltedCard";
 
+// Module-level temporary guard to avoid double increments caused by
+// React StrictMode double-mount in development. This flag is short-lived
+// (cleared after a small timeout) so it doesn't permanently block real visits.
+let __visitIncrementGuard = false;
+
 const TechPulseMagazine = ({ onContinue }) => {
   const headerRef = useRef(null);
+
+  // Local visit counter component
+  function VisitCounter() {
+    const [visits, setVisits] = useState(0);
+
+    useEffect(() => {
+      try {
+        const stored = Number(localStorage.getItem("visitCounter")) || 0;
+
+        if (!__visitIncrementGuard) {
+          // First real increment for this page load. Set guard to avoid
+          // React StrictMode double-mount incrementing twice.
+          __visitIncrementGuard = true;
+          const newVal = stored + 1;
+          localStorage.setItem("visitCounter", String(newVal));
+          setVisits(newVal);
+
+          // Clear the temporary guard after 1.5s so future real visits
+          // (navigations / reloads) can increment again.
+          setTimeout(() => {
+            __visitIncrementGuard = false;
+          }, 1500);
+        } else {
+          // Likely a StrictMode remount; just read the stored value and
+          // show it without incrementing again.
+          setVisits(stored);
+        }
+      } catch (e) {
+        console.error("VisitCounter storage error:", e);
+      }
+    }, []);
+
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+        }}
+      >
+        {/* Eye SVG icon */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{ color: "#fff" }}
+        >
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        <span style={{ color: "#fff" }}>{visits}</span>
+      </div>
+    );
+  }
 
   const handleAnimationComplete = () => {
     console.log("SplitText animation complete!");
@@ -52,6 +117,21 @@ const TechPulseMagazine = ({ onContinue }) => {
 
       {/* Cursor and Stars */}
       <StarParticles />
+
+      {/* Local visit counter (top-right) */}
+      <div
+        style={{
+          position: "absolute",
+          top: 20,
+          right: 20,
+          zIndex: 30,
+          backgroundColor: "rgba(0,0,0,0.6)",
+          padding: "8px 12px",
+          borderRadius: 8,
+        }}
+      >
+        <VisitCounter />
+      </div>
 
       {/* Background Effects */}
       <div
