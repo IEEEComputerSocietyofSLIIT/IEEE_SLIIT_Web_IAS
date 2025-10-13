@@ -1,0 +1,68 @@
+.shiny-particles {
+  pointer-events: none;
+  /* default: let parent control positioning (place inside a relative wrapper) */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 0; /* default behind content; parent can change stacking */
+}
+
+/* when you explicitly want full-screen fixed placement */
+.shiny-particles.fixed {
+  position: fixed;
+  z-index: 40;
+}
+
+.shiny-particles .particle {
+  position: absolute;
+  bottom: -8%; /* start slightly off-screen */
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+  animation-timing-function: cubic-bezier(var(--bezier, 0.42,0,0.58,1));
+  animation-iteration-count: infinite;
+}
+
+/* Diamond shape: use square rotated 45deg */
+.shiny-particles .particle::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+  border-radius: 12%;
+  background: currentColor;
+  /* smaller glow for tiny sparkles */
+  box-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+}
+
+/* cw/ccw variants use different animation paths */
+.shiny-particles .particle.cw { animation-name: floatUpCW; }
+.shiny-particles .particle.ccw { animation-name: floatUpCCW; }
+
+@keyframes floatUpCW {
+  0% { transform: translateY(0) translateX(0) scale(1) rotate(0deg); opacity:0 }
+  8% { opacity:1 }
+  40% { transform: translateY(-45vh) translateX(10vw) scale(0.95) rotate(30deg); opacity:0.9; filter: blur(0.2px); }
+  55% { transform: translateY(-60vh) translateX(6vw) scale(0.9) rotate(60deg); opacity:0.6; }
+  80% { opacity:0.25 }
+  100% { transform: translateY(-110vh) translateX(0) scale(0.8) rotate(120deg); opacity:0 }
+}
+
+@keyframes floatUpCCW {
+  0% { transform: translateY(0) translateX(0) scale(1) rotate(0deg); opacity:0 }
+  8% { opacity:1 }
+  40% { transform: translateY(-45vh) translateX(-10vw) scale(0.95) rotate(-30deg); opacity:0.9; filter: blur(0.2px); }
+  55% { transform: translateY(-60vh) translateX(-6vw) scale(0.9) rotate(-60deg); opacity:0.6; }
+  80% { opacity:0.25 }
+  100% { transform: translateY(-110vh) translateX(0) scale(0.8) rotate(-120deg); opacity:0 }
+}
+
+/* responsive tweak */
+@media (max-width: 640px) {
+  .shiny-particles .particle { animation-duration: 8s; }
+}
+

@@ -37,7 +37,7 @@ export default function Header() {
               <Link to="/">Home</Link>
             </li>
             <li className="text-gray-600 md:mr-12 hover:text-green-600 text-right">
-              <Link to="/magazine">Magazine</Link>
+              <Link to="/magazine-countdown">Magazine</Link>
             </li>
             <li className="text-gray-600 md:mr-12 hover:text-green-600">
               <a href="#aboutus">About Us</a>

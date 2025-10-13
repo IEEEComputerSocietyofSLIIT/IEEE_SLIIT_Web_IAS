@@ -6,6 +6,7 @@ import About from "./components/About";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
 import MagazineViewer from "./components/magazine/Connecter"; 
+import Countdown from "./components/Countdown";
 import './App.css';
 
 
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/magazine" element={<MagazinePage />} />
+        <Route path="/magazine-countdown" element={<Countdown />} />
       </Routes>
     </Router>
   );
