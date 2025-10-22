@@ -77,6 +77,23 @@ const MFlipbook = () => {
           <span className="material-symbols-outlined">download</span>
         </button>
       </div>
+
+      {/* Footer */}
+      <div style={styles.footer}>
+        <p style={{ color: '#888', fontSize: '0.85rem', margin: 0 }}>
+          Developed by{' '}
+          <a
+            href="https://www.linkedin.com/in/senal-galagedara"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.link}
+            onMouseEnter={(e) => (e.target.style.color = '#a855f7')}
+            onMouseLeave={(e) => (e.target.style.color = '#8a2be2')}
+          >
+            Senal Galagedara
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
@@ -158,6 +175,18 @@ const styles = {
     padding: '6px 12px',
     borderRadius: '4px',
     cursor: 'pointer',
+  },
+  footer: {
+    marginTop: '8px',
+    padding: '5px',
+    textAlign: 'center',
+    width: '100%',
+  },
+  link: {
+    color: '#8a2be2',
+    textDecoration: 'none',
+    fontWeight: '600',
+    transition: 'color 0.3s ease',
   },
 };
 
