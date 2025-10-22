@@ -133,6 +133,84 @@ const TechPulseMagazine = ({ onContinue }) => {
         <VisitCounter />
       </div>
 
+      {/* LinkedIn Button (bottom-right, hidden on mobile) */}
+      <a
+        href="https://www.linkedin.com/in/senal-galagedara"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="linkedin-button"
+        style={{
+          position: "absolute",
+          bottom: "30px",
+          right: "30px",
+          zIndex: 30,
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          color: "#fff",
+          padding: "12px",
+          borderRadius: "50%",
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          transition: "all 0.3s ease",
+          width: "50px",
+          height: "50px",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#0077B5";
+          e.currentTarget.style.transform = "scale(1.1)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+          e.currentTarget.style.transform = "scale(1)";
+        }}
+      >
+        {/* LinkedIn Icon SVG */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        
+        {/* Tooltip */}
+        <span
+          className="linkedin-tooltip"
+          style={{
+            position: "absolute",
+            right: "70px",
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            color: "#fff",
+            padding: "8px 16px",
+            borderRadius: "6px",
+            whiteSpace: "nowrap",
+            fontSize: "14px",
+            fontWeight: "500",
+            opacity: 0,
+            pointerEvents: "none",
+            transition: "opacity 0.3s ease",
+          }}
+        >
+          Meet the Developer
+        </span>
+      </a>
+
+      {/* CSS for hover effect and mobile hiding */}
+      <style>{`
+        .linkedin-button:hover .linkedin-tooltip {
+          opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+          .linkedin-button {
+            display: none !important;
+          }
+        }
+      `}</style>
+
       {/* Background Effects */}
       <div
         className="hyperspeed-background"
