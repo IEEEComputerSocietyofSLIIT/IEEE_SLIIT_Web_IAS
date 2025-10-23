@@ -128,6 +128,23 @@ const Flipbook = () => {
                 </div>
             </div>
 
+            {/* Footer */}
+            <div style={footerStyle}>
+                <p style={{ color: '#888', fontSize: '0.9rem', margin: 0 }}>
+                    Developed by{' '}
+                    <a
+                        href="https://www.linkedin.com/in/senal-galagedara"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={linkStyle}
+                        onMouseEnter={(e) => (e.target.style.color = '#a855f7')}
+                        onMouseLeave={(e) => (e.target.style.color = '#8a2be2')}
+                    >
+                        Senal Galagedara
+                    </a>
+                </p>
+            </div>
+
             <audio ref={audioRef} src={flipSoundFile} preload="auto" />
         </div>
     );
@@ -205,6 +222,20 @@ const pageStyle = {
     height: '100%',
     overflow: 'hidden',
     borderRadius: '8px',
+};
+
+const footerStyle = {
+    marginTop: '8ox',
+    padding: '5px 5px',
+    textAlign: 'center',
+    width: '100%',
+};
+
+const linkStyle = {
+    color: '#8a2be2',
+    textDecoration: 'none',
+    fontWeight: '600',
+    transition: 'color 0.3s ease',
 };
 
 export default Flipbook;
