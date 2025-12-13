@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/IAS.png";
 
+// Target: Dec 13, 2025 15:30:00 (3:30 PM)
+const TARGET_DATE = new Date(2025, 11, 13, 15, 30, 0);
+
 export default function Header() {
+  const [magazineUrl, setMagazineUrl] = useState("/magazine");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      if (now >= TARGET_DATE) {
+        setMagazineUrl("/magazine");
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header>
       <div className="relative flex max-w-screen-2xl flex-col overflow-hidden py-2 px-3 md:mx-auto md:flex-row md:items-center">
@@ -37,7 +54,7 @@ export default function Header() {
               <Link to="/">Home</Link>
             </li>
             <li className="text-gray-600 md:mr-12 hover:text-green-600 text-right">
-              <Link to="/magazine-countdown">Magazine</Link>
+              <Link to={magazineUrl}>Magazine</Link>
             </li>
             <li className="text-gray-600 md:mr-12 hover:text-green-600">
               <a href="#aboutus">About Us</a>

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ElectricBorder from "./ElectricBorder";
 import ShinyText from './ShinyText';
 import ShinyParticles from './ShinyParticles';
 import './ShinyText.css';
 
-// Countdown to Oct 23, 2025 00:00:00 (local time)
-const TARGET_DATE = new Date(2025, 9, 23, 0, 0, 0); // months are 0-indexed: 9 = October
+const TARGET_DATE = new Date(2025, 11, 13, 15, 30, 0); // 3:30 PM
+const REDIRECT_DATE = TARGET_DATE;
 
 function getTimeLeft(target) {
   const now = new Date();
@@ -23,17 +23,24 @@ function getTimeLeft(target) {
 }
 
 export default function Countdown() {
+  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(TARGET_DATE));
 
   useEffect(() => {
     const timer = setInterval(() => {
+      const now = new Date();
+      if (now >= REDIRECT_DATE) {
+        navigate('/magazine');
+        clearInterval(timer);
+        return;
+      }
       setTimeLeft(getTimeLeft(TARGET_DATE));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [navigate]);
 
-  const { days, hours, minutes } = timeLeft;
+  const { days, hours, minutes, seconds } = timeLeft;
 
   return (
     <div className="bg-black flex flex-col items-center justify-center text-center text-white px-4 min-h-screen relative">
@@ -52,16 +59,18 @@ export default function Countdown() {
       <div className="flex items-center justify-center">
         <ElectricBorder color="#7df9ff" speed={1} chaos={0.5} thickness={2} style={{ borderRadius: 16 }}>
           <div className="max-w-4xl w-full bg-white/5 backdrop-blur-md rounded-xl p-6 md:p-10 text-center shadow-xl relative z-20">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 items-end justify-center mb-6 sm:mb-8">
-              <TimeBoxLarge label="DAYS" value={days} />
+            <div className="flex items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
               <TimeBoxLarge label="HOURS" value={hours} />
+              <div className="text-2xl sm:text-4xl font-bold pb-6">:</div>
               <TimeBoxLarge label="MINUTES" value={minutes} />
+              <div className="text-2xl sm:text-4xl font-bold pb-6">:</div>
+              <TimeBoxLarge label="SECONDS" value={seconds} />
             </div>
 
             {timeLeft.total <= 0 ? (
               <div className="text-green-400 font-bold text-2xl">The magazine is now available!</div>
             ) : (
-              <div className="mt-4 text-gray-200 text-lg">Magazine will release on IEEE Day — October 23.</div>
+              <div className="mt-4 text-gray-200 text-lg">Magazine Launching Soon...</div>
             )}
           </div>
         </ElectricBorder>

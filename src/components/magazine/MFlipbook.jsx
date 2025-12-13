@@ -81,7 +81,7 @@ const MFlipbook = () => {
       {/* Footer */}
       <div style={styles.footer}>
         <p style={{ color: '#888', fontSize: '0.85rem', margin: 0 }}>
-          Developed by{' '}
+          
           <a
             href="https://www.linkedin.com/in/senal-galagedara"
             target="_blank"
@@ -90,7 +90,7 @@ const MFlipbook = () => {
             onMouseEnter={(e) => (e.target.style.color = '#a855f7')}
             onMouseLeave={(e) => (e.target.style.color = '#8a2be2')}
           >
-            Senal Galagedara
+          Developed by{' <3'}
           </a>
         </p>
       </div>
