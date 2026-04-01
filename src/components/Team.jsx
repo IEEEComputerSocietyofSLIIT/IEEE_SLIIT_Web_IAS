@@ -1,11 +1,50 @@
 import React from "react";
-import Profile from "../assets/profile.jpg";
 import IASprof from "../assets/IASprof.jpg";
-import Hafsa from "../assets/Hafsa Zainab - Vice-Chair.jpg";
-import Yasas from "../assets/Yasas Maddumage.png";
-import Pasindi from "../assets/Pasindi Rathnaweera .png";
-import Safiyyah from "../assets/Safiyyah.png";
-import Shafkhan from "../assets/Shafkhan Mohammed.png";
+import ShafkhanPhoto from "../assets/committee2026/shafkhan-mohammed.jpg";
+import MoamPhoto from "../assets/committee2026/moam-misfar-saadhath-ahmed.jpg";
+import OmaliPhoto from "../assets/committee2026/omali-nimesha.jpg";
+import SakinduPhoto from "../assets/committee2026/sakindu-gamage.jpg";
+import NicolPhoto from "../assets/committee2026/nicol-pathiranage.jpg";
+import NadunPhoto from "../assets/committee2026/nadun-bopitiya.jpg";
+
+const committeeMembers = [
+  {
+    full_name: "Shafkhan Mohammed",
+    position: "Chairperson",
+    email: "shafkhan@ieee.org",
+    photo: ShafkhanPhoto,
+  },
+  {
+    full_name: "Moam Misfar Saadhath Ahmed",
+    position: "Vice Chairperson",
+    email: "saadhathxlr8@gmail.com",
+    photo: MoamPhoto,
+  },
+  {
+    full_name: "Omali Nimesha",
+    position: "Secretary",
+    email: "Omalinimesha123@gmail.com",
+    photo: OmaliPhoto,
+  },
+  {
+    full_name: "Sakindu Gamage",
+    position: "Treasurer",
+    email: "saki.19.kgsn@gmail.com",
+    photo: SakinduPhoto,
+  },
+  {
+    full_name: "Nicol Pathiranage",
+    position: "Editor",
+    email: "nicolsihilalnimsara@gmail.com",
+    photo: NicolPhoto,
+  },
+  {
+    full_name: "Nadun Bopitiya",
+    position: "Assistant Secretary",
+    email: "nadundananjana2020@gmail.com",
+    photo: NadunPhoto,
+  },
+];
 
 export default function Team() {
   return (
@@ -35,94 +74,35 @@ export default function Team() {
         </div>
       </section>
 
-      {/* === Current Executive Board (2025/26) === */}
+      {/* === Current Executive Board (2026/27) === */}
       <section className="max-w-screen-2xl px-10 mx-auto mb-32">
         <h1 className="my-3 text-center font-sans text-4xl font-bold text-primary">
           Current Executive Board<span className="text-black">.</span>
         </h1>
         <p className="text-gray-600 text-md text-center mb-10">
-          The Executive Board of IEEE IAS Chapter 2025/26 of SLIIT.
+          IEEE Industry Applications Society (IAS) - SBC08341A - 2026/27.
         </p>
-
-        {/* === Top 3 (Chair, Vice, Secretary) === */}
-        <div className="mx-auto mb-14 grid max-w-screen-xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Chairperson */}
-          <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:scale-110 transform translate duration-300">
-            <div className="relative flex items-end overflow-hidden rounded-xl">
-              <img src={Hafsa} alt="Chairperson" />
-            </div>
-            <div className="mt-1 p-2">
-              <h2 className="text-gray-900 font-semibold text-lg">
-                Hafsa Zainab Kaleelur Rahman
-              </h2>
-              <p className="text-primary mt-1 text-md font-semibold">
-                Chairperson
-              </p>
-            </div>
-          </article>
-
-          {/* Vice Chairperson */}
-          <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:scale-110 transform translate duration-300">
-            <div className="relative flex items-end overflow-hidden rounded-xl">
-              <img src={Yasas} alt="Vice Chairperson" />
-            </div>
-            <div className="mt-1 p-2">
-              <h2 className="text-gray-900 font-semibold text-lg">
-                Yasas Maddumage
-              </h2>
-              <p className="text-primary mt-1 text-md font-semibold">
-                Vice Chairperson
-              </p>
-            </div>
-          </article>
-
-          {/* Secretary */}
-          <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:scale-110 transform translate duration-300">
-            <div className="relative flex items-end overflow-hidden rounded-xl">
-              <img src={Pasindi} alt="Secretary" />
-            </div>
-            <div className="mt-1 p-2">
-              <h2 className="text-gray-900 font-semibold text-lg">
-                Pasindi Rathnaweera
-              </h2>
-              <p className="text-primary mt-1 text-md font-semibold">
-                Secretary
-              </p>
-            </div>
-          </article>
-        </div>
-
-        {/* === Last 2 (Treasurer & Assistant Secretary) Centered === */}
-        <div className="mx-auto flex flex-wrap justify-center gap-6 max-w-screen-lg">
-          {/* Treasurer */}
-          <article className="w-full sm:w-[280px] md:w-[300px] rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:scale-110 transform translate duration-300">
-            <div className="relative flex items-end overflow-hidden rounded-xl">
-              <img src={Safiyyah} alt="Treasurer" />
-            </div>
-            <div className="mt-1 p-2 text-center">
-              <h2 className="text-gray-900 font-semibold text-lg">
-                Safiyyah Karnain
-              </h2>
-              <p className="text-primary mt-1 text-md font-semibold">
-                Treasurer
-              </p>
-            </div>
-          </article>
-
-          {/* Assistant Secretary */}
-          <article className="w-full sm:w-[280px] md:w-[300px] rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:scale-110 transform translate duration-300">
-            <div className="relative flex items-end overflow-hidden rounded-xl">
-              <img src={Shafkhan} alt="Assistant Secretary" />
-            </div>
-            <div className="mt-1 p-2 text-center">
-              <h2 className="text-gray-900 font-semibold text-lg">
-                Shafkhan Mohammed
-              </h2>
-              <p className="text-primary mt-1 text-md font-semibold">
-                Assistant Secretary
-              </p>
-            </div>
-          </article>
+        <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {committeeMembers.map((member) => (
+            <article
+              key={member.email}
+              className="rounded-xl bg-white p-6 shadow-lg hover:shadow-xl hover:scale-105 transform translate duration-300"
+            >
+              <div className="relative mb-4 h-56 w-full overflow-hidden rounded-lg bg-gray-100">
+                <img
+                  src={member.photo}
+                  alt={`${member.full_name} profile`}
+                  className="h-full w-full object-contain object-bottom"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-1 text-center">
+                <h2 className="text-gray-900 font-semibold text-lg">{member.full_name}</h2>
+                <p className="text-primary mt-1 text-md font-semibold">{member.position}</p>
+                <p className="text-gray-600 mt-2 text-sm break-all">{member.email}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
     </>
