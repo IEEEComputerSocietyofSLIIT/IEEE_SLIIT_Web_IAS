@@ -82,21 +82,21 @@ export default function Team() {
         <p className="text-gray-600 text-md text-center mb-10">
           IEEE Industry Applications Society (IAS) - SBC08341A - 2026/27.
         </p>
-        <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {committeeMembers.map((member) => (
             <article
               key={member.email}
-              className="rounded-xl bg-white p-6 shadow-lg hover:shadow-xl hover:scale-105 transform translate duration-300"
+              className="mx-auto w-full max-w-[300px] rounded-xl bg-white p-4 shadow-lg hover:shadow-xl hover:scale-105 transform translate duration-300 flex flex-col items-center"
             >
-              <div className="relative mb-4 h-56 w-full overflow-hidden rounded-lg bg-gray-100">
+              <div className="relative w-full aspect-[4/5] overflow-hidden rounded-lg bg-gray-100 mb-4">
                 <img
                   src={member.photo}
                   alt={`${member.full_name} profile`}
-                  className="h-full w-full object-contain object-bottom"
+                  className="h-full w-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
-              <div className="mt-1 text-center">
+              <div className="text-center w-full">
                 <h2 className="text-gray-900 font-semibold text-lg">{member.full_name}</h2>
                 <p className="text-primary mt-1 text-md font-semibold">{member.position}</p>
                 <p className="text-gray-600 mt-2 text-sm break-all">{member.email}</p>
