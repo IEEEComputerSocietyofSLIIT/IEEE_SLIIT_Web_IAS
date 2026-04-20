@@ -6,6 +6,7 @@ import OmaliPhoto from "../assets/committee2026/omali-nimesha.jpg";
 import SakinduPhoto from "../assets/committee2026/sakindu-gamage.jpg";
 import NicolPhoto from "../assets/committee2026/nicol-pathiranage.jpg";
 import NadunPhoto from "../assets/committee2026/nadun-bopitiya.jpg";
+import RumanaPhoto from "../assets/committee2026/Rumana Azmi - Rumana Azmi.jpg";
 
 const committeeMembers = [
   {
@@ -13,36 +14,42 @@ const committeeMembers = [
     position: "Chairperson",
     email: "shafkhan@ieee.org",
     photo: ShafkhanPhoto,
+    linkedin: "http://www.linkedin.com/in/shafkhan-mohammed"
   },
   {
     full_name: "Moam Misfar Saadhath Ahmed",
     position: "Vice Chairperson",
     email: "saadhathxlr8@gmail.com",
     photo: MoamPhoto,
+    linkedin: "https://lk.linkedin.com/in/saadhath-ahmed-370251188"
   },
   {
     full_name: "Omali Nimesha",
     position: "Secretary",
     email: "Omalinimesha123@gmail.com",
     photo: OmaliPhoto,
+    linkedin: "https://www.linkedin.com/in/omali-nimesha?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
   },
   {
     full_name: "Sakindu Gamage",
     position: "Treasurer",
     email: "saki.19.kgsn@gmail.com",
     photo: SakinduPhoto,
+    linkedin: "https://www.linkedin.com/in/sakindu-niman-4811a0269"
   },
   {
     full_name: "Nicol Pathiranage",
     position: "Editor",
     email: "nicolsihilalnimsara@gmail.com",
     photo: NicolPhoto,
+    linkedin: "https://www.linkedin.com/in/nicol-sihilal-880513292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
     full_name: "Nadun Bopitiya",
     position: "Assistant Secretary",
     email: "nadundananjana2020@gmail.com",
     photo: NadunPhoto,
+    linkedin: "http://www.linkedin.com/in/nadun-dananjana"
   },
 ];
 
@@ -86,7 +93,8 @@ export default function Team() {
           {committeeMembers.map((member) => (
             <article
               key={member.email}
-              className="mx-auto w-full max-w-[300px] rounded-xl bg-white p-4 shadow-lg hover:shadow-xl hover:scale-105 transform translate duration-300 flex flex-col items-center"
+              className="mx-auto w-full max-w-[300px] rounded-xl bg-white p-4 shadow-lg hover:shadow-xl hover:scale-105 transform translate duration-300 flex flex-col items-center cursor-pointer"
+              onClick={() => window.open(member.linkedin, "_blank")}
             >
               <div className="relative w-full aspect-[4/5] overflow-hidden rounded-lg bg-gray-100 mb-4">
                 <img
