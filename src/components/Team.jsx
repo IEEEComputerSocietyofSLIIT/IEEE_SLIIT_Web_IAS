@@ -6,7 +6,7 @@ import OmaliPhoto from "../assets/committee2026/omali-nimesha.jpg";
 import SakinduPhoto from "../assets/committee2026/sakindu-gamage.jpg";
 import NicolPhoto from "../assets/committee2026/nicol-pathiranage.jpg";
 import NadunPhoto from "../assets/committee2026/nadun-bopitiya.jpg";
-import RumanaPhoto from "../assets/committee2026/Rumana Azmi - Rumana Azmi.jpg";
+import RumanaPhoto from "../assets/committee2026/Rumana.jpg";
 
 const committeeMembers = [
   {
@@ -17,7 +17,7 @@ const committeeMembers = [
     linkedin: "http://www.linkedin.com/in/shafkhan-mohammed"
   },
   {
-    full_name: "Moam Misfar Saadhath Ahmed",
+    full_name: "Saadhath Ahmed",
     position: "Vice Chairperson",
     email: "saadhathxlr8@gmail.com",
     photo: MoamPhoto,
@@ -26,7 +26,7 @@ const committeeMembers = [
   {
     full_name: "Omali Nimesha",
     position: "Secretary",
-    email: "Omalinimesha123@gmail.com",
+    email: "omalinimesha123@gmail.com",
     photo: OmaliPhoto,
     linkedin: "https://www.linkedin.com/in/omali-nimesha?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
   },
